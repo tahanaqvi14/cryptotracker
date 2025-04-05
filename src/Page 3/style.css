@@ -1,0 +1,10 @@
+.blur-effect {
+    filter: blur(8px); /* Adjust the blur intensity */
+    transition: filter 0.3s ease-in-out;
+  }
+  
+  /* If you want to remove the blur on hover */
+  .blur-effect:hover {
+    filter: blur(0);
+  }
+  

@@ -1,0 +1,14 @@
+@keyframes move-loop {
+    0% {
+      transform: translateX(-130%);
+    }
+    100% {
+      transform: translateX(120%);
+    }
+  }
+  
+  .animate-move-loop {
+    animation: move-loop 4s linear infinite;
+    white-space: nowrap; /* Prevents text from wrapping */
+  }
+  
