@@ -18,7 +18,7 @@ const Eachcard = () => {
     const fetchData = async () => {
       setIsLoading(true);
       try {
-        const { data } = await axios.get(`http://localhost:5000/trip/${id}`, { withCredentials: true });
+        const { data } = await axios.get(`https://cryptotrackerbackend-rw2e.onrender.com/trip/${id}`, { withCredentials: true });
         setCountries(data);
 
         // Calculate and update region percentages
