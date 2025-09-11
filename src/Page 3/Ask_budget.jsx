@@ -1,8 +1,11 @@
+import { useNavigate } from "react-router-dom";
 import React, { useState, useContext, useEffect } from 'react';
 import { AppContext } from "../Api";
 import useThemeStore from '../assets/themeStore';
 
 export default function Ask_budget() {
+  const navigate = useNavigate();
+
   const { theme } = useThemeStore();
   const { cryptoData } = useContext(AppContext);
   const [selectedCurrency, setSelectedCurrency] = useState('USDC');
@@ -17,7 +20,7 @@ export default function Ask_budget() {
     return () => {
       document.body.style.overflow = "auto";
     };
-  }, []);
+  }, [])
 
   function findByProperty() {
     const result = cryptoData.find(item => item.symbol.toLowerCase() === selectedCurrency.toLowerCase());
@@ -27,7 +30,9 @@ export default function Ask_budget() {
     } else {
       console.error('Currency not found in cryptoData');
     }
+    navigate(`/trip/${r}`);
   }
+
 
   return (
     <div
@@ -163,8 +168,8 @@ export default function Ask_budget() {
           </div>
         </div>
 
-        <a
-          href={`/trip/${r}`}
+        <button
+          // href={`/trip/${r}`}
           style={{
             width: '100%',
             display: 'inline-block',
@@ -197,7 +202,7 @@ export default function Ask_budget() {
           onClick={findByProperty}
         >
           Submit
-        </a>
+        </button>
       </div>
     </div>
   );
