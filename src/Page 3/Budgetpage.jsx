@@ -15,7 +15,7 @@ export default function Budgetpage() {
 
 
   useEffect(() => {
-      axios.get(`http://localhost:5000/trip/${id}`) // Fetch data from backend
+      axios.get(`https://cryptotrackerbackend-rw2e.onrender.com/trip/${id}`) // Fetch data from backend
           .then()
           
           .catch(error => console.error("Error fetching data:", error));
